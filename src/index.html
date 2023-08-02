@@ -1,14 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script src="index.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Validador de cartão</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="img/devmaromba-logo.png" alt="logo">
+    <div class="titulo">
+      <h1> MENSALIDADE DEVMAROMBA</h1>
+      <h3> O que não te desafia, não te transforma.</h3>
+    </div>
+
+  </header>
+  <main class="container">
+
+    <section class="ui">
+      <!-- Numero do cartão lado esquedo -->
+      <div class="container-left">
+        <form id="credit-card">
+          <div class="number-container">
+            <label> Numero do cartão</label>
+            <input type="text" nome="card-number" id="card-number" maxlength="19" placeholder="1234 5678 9101 1121"
+              required>
+          </div>
+
+          <div class="name-container">
+            <label> Nome impresso no cartão</label>
+            <input type="text" nome="name-text" id="name-text" maxlength="30" placeholder="EMILAINE SILVA" required>
+          </div>
+
+          <div class="infos-container">
+            <div class="expiration-container">
+              <label> Validade</label>
+              <input type="text" nome="valid-thru-text" id="valid-thru-text" maxlength="5" placeholder="02/40" required>
+            </div>
+
+            <div class="cvv-container">
+              <label> CVV</label>
+              <input type="text" nome="cvv-text" id="cvv-text" maxlength="3" placeholder="123" required>
+            </div>
+
+          </div>
+          <input type="submit" value="VALIDAR" id="add">
+        </form>
+      </div>
+
+      <!-- SEGUNDO CARTÃO QUE VAI RECEBER O VALOR DOS DADOS DO USUARIO CONFORME ELE VAI PREENCHENDO -->
+
+      <div class="container-right">
+        <div class="card">
+          <div class="intern">
+            <img class="approximation" src="img/aprox.png" alt="aproximação">
+            <div class="card-number">
+              <div class="number-vl">1234 5678 9101 1121</div>
+            </div>
+
+            <div class="card-holder">
+              <label>Nome</label>
+              <div class="name-vl"> EMILAINE SILVA</div>
+            </div>
+
+            <div class="card-infos">
+              <div class="exp">
+                <label>Validade</label>
+                <div class="expiration-vl">02/40</div>
+              </div>
+
+              <div class="cvv">
+                <label>CVV</label>
+                <div class="cvv-vl">123</div>
+
+              </div>
+            </div>
+            <img class="chip" src="img/chip.png" alt="chip">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+  <footer> Emilaine </footer>
+  <script src="index.js" type="module"></script>
+</body>
+
 </html>
