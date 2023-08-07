@@ -8,17 +8,21 @@
 
 header {
   align-items: center;
-  text-align: center;
   color: antiquewhite;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: -50px;
+
+
 
  }
 
 .logo {
-  height: 450px;
+  height: 300px;
+  width: 300px;
   margin-top: -40px 0 -40px;
+  padding: -50px;
 
 }
 
@@ -26,7 +30,7 @@ header {
 
   align-items: center;
   align-content: center;
-  font-size: 150%;
+  font-size: 100%;
   text-shadow: 2px 2px 4px #000000; /*fundo no logo */
 
 }
@@ -62,7 +66,7 @@ body {
   border-radius: 10px;
   width: 60%;
   margin: 0 auto;
-  padding: 10%;
+  padding: 5%;
   display: flex;
   gap: 20px;
 
@@ -113,9 +117,9 @@ body {
 }
 
 .card-number {
-  margin-top: 40px;
-  font-size: 2rem;
-  font-weight: 700;
+  margin-top: 30px;
+  font-size: 1.6rem;
+  font-weight: 800;
   color: white;
   display: flex;
 }
