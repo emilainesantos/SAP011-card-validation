@@ -12,16 +12,12 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: -50px;
 
  }
 
 .logo {
-  height: 350px;
-  width: 350px;
-  margin-top: -40px 0px -40px ;
-  padding: -50px;
-
+  height: 450px;
+  margin-top: -40px 0 -40px;
 
 }
 
