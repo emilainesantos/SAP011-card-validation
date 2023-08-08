@@ -1,56 +1,45 @@
+// validator.js
 const validator = {
+  isValid, maskify,
+};
 
-/* meu codigo*/
+export default validator;
 
-  isValid: function (campoNumeroDoCartao) {
-    const arrayCard = campoNumeroDoCartao.split("");
-    console.log(arrayCard)
-    const arrayCardInvertido = arrayCard.reverse();
-    console.log(arrayCardInvertido)
-    let somaTotal = 0;
-    let resultadoDaValidacao = false;
-    for (let i = 0; i < campoNumeroDoCartao.length; i++) {
-        let digito = parseInt(arrayCardInvertido[i]); // parseInt vai converter o primeiro argumento para uma string, vai analisar e retornar um inteiro ou NaN
 
-        console.log("validar cartão de crédito" + digito)
-        if ((i + 1) % 2 === 0) {
-            digito = digito * 2;
-            if (digito > 9) {
-                const digitoRestante = digito % 10; // 16 % 10 = 6
-                digito = 1 + digitoRestante;// 1 + 6 = 7
+function isValid(card) {
+  const cardNumber = card.replace(/\D/g, '')
+  
+  const cardNumberArray = [];
+  let soma = 0;
+  for (let index = 0; index < cardNumber.length; index++) {
+    const elementoAtual = cardNumber[index];
+    cardNumberArray.push(parseInt(elementoAtual));
+  }
 
-            }
-        }
-
-        somaTotal = somaTotal + digito;
+  for (let index = cardNumberArray.length - 2; index >= 0; index -= 2) {
+    const casaAtual = cardNumberArray[index] * 2;
+    if (casaAtual > 9) {
+      cardNumberArray[index] = casaAtual % 10 + 1;
+    } else {
+      cardNumberArray[index] = casaAtual;
     }
-    if (somaTotal % 10 === 0) {
-        resultadoDaValidacao = true;
-    }
-    console.log('somaTotal ' + somaTotal)
-    return resultadoDaValidacao;
+  }
 
+  for (let index = 0; index < cardNumberArray.length; index++) {
+    soma = soma + cardNumberArray[index];
+  }
 
-
-},
-maskify: function (creditCardNumber) {
-    const last4Digits = creditCardNumber.slice(-4);
-    console.log(last4Digits)
-    return last4Digits.padStart(creditCardNumber.length, '#');
-
+  if (soma % 10 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 
 }
 
 
+function maskify(cardNumber) {
+  const valorExibido = cardNumber.replace(/.(?=.{4})/g, '#');
+  return valorExibido;
+}
 
-
-/*meu codigo */
-
-
-
-
-
-
-};
-
-export default validator;
