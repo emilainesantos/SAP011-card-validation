@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  /* box-sizing: border-box; */
+}
+
+
+header {
+  align-items: center;
+  color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+ }
+
+.logo {
+  height: 300px;
+
+
+}
+
+.titulo {
+
+  align-items: center;
+  align-content: center;
+  font-size: 100%;
+  text-shadow: 2px 2px 4px #000000; /*fundo no logo */
+
+}
+
+
+
+/* CORPO */
+
+
+
+body {
+  height: 100%;
+  background-image: url(/img/fundoacademia.jpg);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  /* background-image: linear-gradient( to right bottom, hsla(0, 0%, 0%, 0.6), hsla(0, 0%, 0%, 0.6) ),url('img/background-img.jpg'); */
+
+
+}
+
+/*Designer dos cartões */
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 3% auto;
+}
+
+.ui {
+  border: 0;
+  border-radius: 10px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 5%;
+  display: flex;
+  gap: 20px;
+
+
+  /*EFEITO VIDRO */
+  background: rgba( 255, 255, 255, 0.35 );
+  box-shadow: 0 8px 32px 0 rgba(13, 13, 13, 0.37);
+  backdrop-filter: blur( 13.5px );
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.container-left { /* dados usuarios*/
+  width: 50%;
+}
+
+.container-right { /* cartao 2*/
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  width: 360px;
+  height: 230px;
+  margin: 0 auto;
+  background: linear-gradient(45deg, rgb(152, 191, 183) 0%, rgb(197, 34, 189) 35%, rgb(176, 212, 42) 100%);
+  border: 1px solid rgba(0,0,0,.3);
+  border-radius: 15px;
+}
+
+.intern {
+  padding: 20px;
+}
+
+.approximation {
+  width: 30px;
+  transform: rotate(90deg);
+}
+
+.chip {
+  height: 40px;
+  position: relative;
+  left: 87%;
+  bottom: 20px;
+}
+
+.card-number {
+  margin-top: 30px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  display: flex;
+}
+
+.card-holder {
+  color: whitesmoke;
+}
+
+.card label {
+  font-size: .7rem;
+}
+
+.card-infos {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  color: white;
+}
+
+#credit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.1rem;
+  color: rgb(17, 17, 17);
+  text-transform: uppercase;
+}
+
+.number-container, .name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.expiration-container, .cvv-container {
+  width: 60%;
+}
+
+input {
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #333333;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  outline: 0;
+  width: 90%;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #95B8D1;
+}
+
+input#valid-thru-text, input#cvv-text {
+  width: 80%;
+}
+
+input[type="submit"] {
+  width: 95%;
+  background-color: #bb0a62;
+  cursor: pointer;
+}
+
+.infos-container {
+  display: flex;
+}
+
+@media (max-width: 1024px) { /* janela menor ou igual  1024px*/
+  .ui {
+      flex-direction: column-reverse; /* quando diminui a tela o cartão 2 vai ficar por cima do cartão 1, stilo reverso de coluna */
+  }
+
+  .container-left, .container-right {
+      width: 100%;
+  }
+}
