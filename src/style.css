@@ -8,17 +8,20 @@
 
 header {
   align-items: center;
-  text-align: center;
   color: antiquewhite;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: -50px;
 
  }
 
 .logo {
-  height: 450px;
-  margin-top: -40px 0 -40px;
+  height: 350px;
+  width: 350px;
+  margin-top: -40px 0px -40px ;
+  padding: -50px;
+
 
 }
 
@@ -26,19 +29,15 @@ header {
 
   align-items: center;
   align-content: center;
-  font-size: 150%;
+  font-size: 100%;
   text-shadow: 2px 2px 4px #000000; /*fundo no logo */
 
 }
 
-/* body::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  position: absolute;
-  background-color: rgba(0,0,0,.3)
-} */
+
+
+/* CORPO */
+
 
 body {
   height: 100%;
@@ -62,7 +61,7 @@ body {
   border-radius: 10px;
   width: 60%;
   margin: 0 auto;
-  padding: 10%;
+  padding: 5%;
   display: flex;
   gap: 20px;
 
@@ -77,11 +76,11 @@ body {
 
 }
 
-.container-left {
+.container-left { /* dados usuarios*/
   width: 50%;
 }
 
-.container-right {
+.container-right { /* cartao 2*/
   width: 50%;
   display: flex;
   align-items: center;
@@ -113,9 +112,9 @@ body {
 }
 
 .card-number {
-  margin-top: 40px;
-  font-size: 2rem;
-  font-weight: 700;
+  margin-top: 30px;
+  font-size: 1.6rem;
+  font-weight: 800;
   color: white;
   display: flex;
 }
@@ -183,9 +182,9 @@ input[type="submit"] {
   display: flex;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) { /* janela menor ou igual  1024px*/
   .ui {
-      flex-direction: column-reverse;
+      flex-direction: column-reverse; /* quando diminui a tela o cartão 2 vai ficar por cima do cartão 1, stilo reverso de coluna */
   }
 
   .container-left, .container-right {
