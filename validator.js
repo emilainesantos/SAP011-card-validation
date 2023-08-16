@@ -8,7 +8,7 @@ export default validator;
 
 function isValid(card) {
   const cardNumber = card.replace(/\D/g, '')
-  
+
   const cardNumberArray = [];
   let soma = 0;
   for (let index = 0; index < cardNumber.length; index++) {
@@ -37,7 +37,7 @@ function isValid(card) {
 
 }
 
-
+//mascara os trumeros, trocando por #
 function maskify(cardNumber) {
   const valorExibido = cardNumber.replace(/.(?=.{4})/g, '#');
   return valorExibido;
