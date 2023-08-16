@@ -17,18 +17,18 @@ const cardExpirationText = document.querySelector(".expiration-vl"); // SEGUNDO 
 const cardCVVText = document.querySelector(".cvv-vl"); // SEGUNDO CARTAO CSS
 
 
-/*SOCORRRO */
+//VALIDAÇÃO CARTÃO
 function preenchimentoCompleto() {
   if (document.getElementById('card-number').value.length < 16) {
-    alert('Por favor, insira todos os 16 dígitos do cartão');
+    alert('Inserir o numero  do cartão');
   } else {
     const cardNumber = document.getElementById('card-number').value;
     const ehValido = validator.isValid(cardNumber);
     if (ehValido) {
 
-      alert('Cartão válido!');
+      alert('Este cartão é válido!');
     } else {
-      alert('Cartão inválido!');
+      alert('Este Cartão é inválido!');
     }
   }
 
@@ -47,26 +47,22 @@ button.addEventListener('click', function () {
 );
 
 
-/* SOCORRROO */
-
-
-
 
 
 
 // COMO REPLICAR A INFORMÇÃO DO CARD1 PARA O CARD2
 
-cardNumber.addEventListener("keyup", (e) => {
-  if (!e.target.value) {
-    cardNumberText.innerText = "1234 5678 9101 1121";
+cardNumber.addEventListener("keyup", (e) => { //KEYUP pega o momento que o usuario clica no input
+  if (!e.target.value) { //caso a tag estiver vazia
+    cardNumberText.innerText = "1234 5678 9101 1121"; // o input fica com o numero como exemplo
   } else {
     const valuesOfInput = e.target.value.replaceAll(" ", "");
 
     if (e.target.value.length > 14) {
-      e.target.value = valuesOfInput.replace(/(\d{4})(\d{4})(\d{4})(\d{0,4})/, "$1 $2 $3 $4");
-      cardNumberText.innerHTML = valuesOfInput.replace(/(\d{4})(\d{4})(\d{4})(\d{0,4})/, "$1 $2 $3 $4");
+      e.target.value = valuesOfInput.replace(/(\d{4})(\d{4})(\d{4})(\d{0,4})/, "$1 $2 $3 $4"); //formataçao de texto no ínput do card 1
+      cardNumberText.innerHTML = valuesOfInput.replace(/(\d{4})(\d{4})(\d{4})(\d{0,4})/, "$1 $2 $3 $4"); //espelho de formação card 2
     } else {
-      cardNumberText.innerHTML = valuesOfInput
+      cardNumberText.innerHTML = valuesOfInput // o card 2 recebe as informações em tempo real do card 1
     }
   }
 })

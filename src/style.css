@@ -38,7 +38,7 @@ header {
 
 body {
   height: 100%;
-  background-image: url(/img/fundoacademia.jpg);
+  background-image: url(./img/fundoacademia.jpg);
   background-size: cover;
   /* background-repeat: no-repeat; */
   /* background-image: linear-gradient( to right bottom, hsla(0, 0%, 0%, 0.6), hsla(0, 0%, 0%, 0.6) ),url('img/background-img.jpg'); */
